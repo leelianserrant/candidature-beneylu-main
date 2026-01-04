@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Candidature – Beneylu School</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --blue-main: #1d4ed8;
+      --blue-light: #3b82f6;
+      --bg-light: #f5f7fb;
+      --text-dark: #1f2937;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .pancarte {
+      background: white;
+      max-width: 900px;
+      width: 90%;
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.6rem;
+      margin-bottom: 10px;
+      color: var(--blue-main);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: normal;
+      margin-bottom: 40px;
+      color: var(--blue-light);
+    }
+
+    section {
+      margin-bottom: 35px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--blue-main);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .quote {
+      background: #eef2ff;
+      padding: 25px;
+      border-left: 6px solid var(--blue-main);
+      font-style: italic;
+      border-radius: 10px;
+    }
+
+    nav {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    nav a {
+      text-decoration: none;
+      background: var(--blue-main);
+      color: white;
+      padding: 14px 20px;
+      text-align: center;
+      border-radius: 14px;
+      font-weight: bold;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    nav a:hover {
+      background: var(--blue-light);
+      transform: translateY(-4px);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 35px;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="pancarte">
+    <h1>🚀 Futur contributeur à l’éducation numérique</h1>
+    <h2>Candidature créative – Beneylu School</h2>
+
+    <section id="profil">
+      <span class="badge">👤 Mon profil</span>
+      <p>
+        Étudiant passionné par le numérique et l’éducation, je souhaite contribuer
+        à des projets qui rendent l’apprentissage plus simple, plus accessible
+        et plus engageant.
+      </p>
+    </section>
+
+    <section id="competences">
+      <span class="badge">🛠️ Compétences</span>
+      <ul>
+        <li>Analyse des besoins utilisateurs</li>
+        <li>Conception et déploiement de sites web</li>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Travail en équipe & autonomie</li>
+      </ul>
+    </section>
+
+    <section id="projets">
+      <span class="badge">📂 Projets</span>
+      <p>
+        Stage international à l’Université de Portsmouth : conception et mise en ligne
+        d’un site web complet pour le musée <strong>WWI Remembrance Centre</strong>.
+      </p>
+    </section>
+
+    <section class="quote">
+      “Si je devais expliquer mon rôle à un élève :  
+      j’aide à créer des outils pour que l’école numérique soit plus simple et plus agréable.”
+    </section>
+
+    <nav>
+      <a href="#profil">👤 Profil</a>
+      <a href="#competences">🛠️ Compétences</a>
+      <a href="#projets">📂 Projets</a>
+      <a href="#contact">📬 Contact</a>
+    </nav>
+
+    <footer id="contact">
+      📧 Contact : leelian.serrant@hotmail.com  
+      <br />
+      © Candidature créative – Éducation & Numérique
+    </footer>
+  </main>
+</body>
+</html>
