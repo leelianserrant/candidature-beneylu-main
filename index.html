@@ -4,87 +4,157 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page modèle</title>
   <style>
-    * {
-      box-sizing: border-box;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    }body {
+   /* RESET SIMPLE */
+* {
   margin: 0;
-  padding: 40px 20px;
-  background: #f6f7fb;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+/* VARIABLES */
+:root {
+  --blue: #1d4ed8;
+  --blue-light: #3b82f6;
+  --bg: #f5f7fb;
+  --dark: #1f2937;
+  --gray: #6b7280;
 }
 
-.card {
-  height: 200px;
-  border-radius: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* GLOBAL */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* HEADER */
+.hero {
   text-align: center;
+  padding: 80px 20px 60px;
+  background: linear-gradient(135deg, var(--blue), var(--blue-light));
+  color: white;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: fadeDown 0.8s ease-out;
+}
+
+.subtitle {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* SECTION PROJETS */
+.projects {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.projects h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--blue);
+  text-align: center;
+}
+
+/* GRID */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* CARTE PROJET */
+.project-card {
+  background: white;
   padding: 25px;
-  color: #ffffff;
-  font-size: 26px;
-  font-weight: 600;
-  line-height: 1.3;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--dark);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.blue {
-  background: linear-gradient(180deg, #78b7e8, #7a8ee6);
+.project-card h3 {
+  color: var(--blue);
+  margin-bottom: 10px;
 }
 
-.light {
-  background: linear-gradient(180deg, #d7e3ea, #cfd8df);
-  color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.25);
+.project-card p {
+  color: var(--gray);
+  font-size: 0.95rem;
 }
 
-.orange {
-  background: linear-gradient(180deg, #f0b58a, #ecd58a);
+/* HOVER */
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.12);
 }
 
-@media (max-width: 480px) {
-  .card {
-    height: 170px;
-    font-size: 22px;
+/* PROJET SANS LIEN */
+.project-card.disabled {
+  cursor: default;
+  opacity: 0.85;
+}
+
+.project-card.disabled:hover {
+  transform: none;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+/* ANIMATION */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
   </style>
 </head>
-<body> 
-  <div class="container">
-    <a href="https://github.com/leelianserrant/candidature-beneylu-main">
-      <div class="card blue">
-        SORTIES<br />
-        PÉDAGOGIQUES<br />
-        EN JANVIER
+<body>
+
+  <header class="hero">
+    <h1 class="title">Leelian Serrant</h1>
+    <p class="subtitle">Développement Web & Projets Techniques</p>
+  </header>
+
+  <section class="projects">
+    <h2>Quelques projets</h2>
+
+    <div class="projects-grid">
+      <a class="project-card" href="https://github.com/leelianserrant/WW1-Project.git" target="_blank">
+        <h3>WW1 Project</h3>
+        <p>Site web complet développé en équipe pour un musée historique.</p>
+      </a>
+
+      <a class="project-card" href="https://github.com/leelianserrant/react_weink.git" target="_blank">
+        <h3>React Weink</h3>
+        <p>Application front-end en React avec gestion des composants.</p>
+      </a>
+
+      <a class="project-card" href="https://github.com/leelianserrant/Symfony-API.git" target="_blank">
+        <h3>Symfony API</h3>
+        <p>API REST développée avec Symfony.</p>
+      </a>
+
+      <div class="project-card disabled">
+        <h3>API Django / Angular</h3>
+        <p>Back-end Django connecté à un front Angular.</p>
       </div>
-    </a>
-    
-    <div class="card light">
-      Message de<br />
-      l'équipe éducative<br />
-      JP1 mat
     </div>
+  </section>
 
-    <div class="card light">
-      Comprendre<br />
-      l'histoire " Lulu et<br />
-      les bonbons "
-    </div>
-
-    <div class="card orange">
-      Notre projet<br />
-      Gourmandise
-    </div>
-  </div>
 </body>
 </html>
